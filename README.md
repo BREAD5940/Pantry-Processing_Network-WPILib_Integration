@@ -1,4 +1,4 @@
-# Pantry: Processing Network WPILib Integration (v0.0.0)
+# Pantry: Processing Network - WPILib Integration (v0.0.0)
 This pantry ingredient integrates WPILib with the processing network ingredient, making it suitable for controlling robots. It is currently under initial development, come back soon!
 
 # Dependencies
