@@ -4,7 +4,7 @@
 	<classpathentry kind="src" path="tests"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Pantry-Processing_Network"/>
-	<classpathentry kind="var" path="wpilib"/>
+	<classpathentry kind="var" path="wpilib" sourcepath="/wpilib.sources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
