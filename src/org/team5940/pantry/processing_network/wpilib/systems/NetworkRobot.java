@@ -11,13 +11,27 @@ public abstract class NetworkRobot extends RobotBase {
 	@Override
 	public void startCompetition() {
 
-		Network network = new Network(10000);
+		Network network = new Network(this.getMainNetworkUpdateRate());
 
-		this.setupNetwork(network);
+		try {
+			this.setupNetwork(network);
 
-		network.start();
+			network.start();
 
-		HAL.observeUserProgramStarting();
+			HAL.observeUserProgramStarting();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Gets the update rate for the main Network. Can be overridden. Defaults to
+	 * 10,000 microseconds.
+	 * 
+	 * @return The update rate for the main Network.
+	 */
+	protected int getMainNetworkUpdateRate() {
+		return 10000;
 	}
 
 	/**
@@ -29,5 +43,5 @@ public abstract class NetworkRobot extends RobotBase {
 	 *            10,000 microseconds and will automatically be started after
 	 *            this method is run.
 	 */
-	public abstract void setupNetwork(Network network);
+	public abstract void setupNetwork(Network network) throws Exception;
 }
