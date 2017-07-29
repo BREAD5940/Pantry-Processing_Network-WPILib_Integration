@@ -1,10 +1,7 @@
 package org.team5940.pantry.processing_network.wpilib.input;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import org.team5940.pantry.processing_network.Network;
-import org.team5940.pantry.processing_network.wpilib.input.RobotStateValueNode.RobotState;
 
 public class RobotStateValueNodeTest {
 
