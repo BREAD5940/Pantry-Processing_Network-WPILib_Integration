@@ -1,6 +1,7 @@
 package org.team5940.pantry.processing_network.wpilib.input.controller;
 
 import org.team5940.pantry.processing_network.Network;
+import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
 import org.team5940.pantry.processing_network.ValueNode;
 
 import edu.wpi.first.wpilibj.GenericHID;
@@ -39,9 +40,7 @@ public class HIDAxisValueNode extends ValueNode<Double> {
 	public HIDAxisValueNode(Network network, GenericHID inputDevice, int axis)
 			throws IllegalArgumentException, IllegalStateException {
 		super(network);
-		if (inputDevice == null) {
-			throw new IllegalArgumentException("GenericHID cannot be null");
-		}
+		ProcessingNetworkUtils.checkArgument(inputDevice);
 		this.inputDevice = inputDevice;
 		this.axis = axis;
 	}
