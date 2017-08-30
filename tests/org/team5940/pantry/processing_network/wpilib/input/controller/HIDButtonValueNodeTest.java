@@ -3,8 +3,6 @@ package org.team5940.pantry.processing_network.wpilib.input.controller;
 import org.junit.Test;
 import org.team5940.pantry.processing_network.Network;
 
-import edu.wpi.first.wpilibj.Joystick;
-
 public class HIDButtonValueNodeTest {
 	
 	@Test(expected = IllegalArgumentException.class)
