@@ -3,6 +3,7 @@
  */
 package org.team5940.pantry.processing_network.wpilib.output.pneumatics;
 
+import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.Node;
 import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
@@ -39,10 +40,10 @@ public class DoubleSolenoidNode extends Node {
 	 * @throws IllegalStateException
 	 *             If network is started.
 	 */
-	public DoubleSolenoidNode(Network network, boolean requireUpdate,
+	public DoubleSolenoidNode(Network network, Logger logger, boolean requireUpdate,
 			ValueNode<? extends DoubleSolenoid.Value> solenoidValueNode, DoubleSolenoid... doubleSolenoids)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network, requireUpdate, solenoidValueNode);
+		super(network, logger, requireUpdate, solenoidValueNode);
 
 		ProcessingNetworkUtils.checkArrayArguments(doubleSolenoids);
 

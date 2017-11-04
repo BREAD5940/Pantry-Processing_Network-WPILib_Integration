@@ -1,5 +1,6 @@
 package org.team5940.pantry.processing_network.wpilib.input.controller;
 
+import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
 import org.team5940.pantry.processing_network.ValueNode;
@@ -37,9 +38,9 @@ public class HIDButtonValueNode extends ValueNode<Boolean> {
 	 * @throws IllegalArgumentException
 	 *             If the inputDevice is null.
 	 */
-	public HIDButtonValueNode(Network network, GenericHID inputDevice, int buttonPort)
+	public HIDButtonValueNode(Network network, Logger logger, GenericHID inputDevice, int buttonPort)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network);
+		super(network, logger);
 		ProcessingNetworkUtils.checkArgument(inputDevice);
 		this.inputDevice = inputDevice;
 		this.buttonPort = buttonPort;

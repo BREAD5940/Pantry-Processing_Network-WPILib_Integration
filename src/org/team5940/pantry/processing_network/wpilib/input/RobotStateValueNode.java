@@ -1,5 +1,6 @@
 package org.team5940.pantry.processing_network.wpilib.input;
 
+import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.ValueNode;
 import org.team5940.pantry.processing_network.wpilib.input.RobotStateValueNode.RobotState;
@@ -37,8 +38,8 @@ public class RobotStateValueNode extends ValueNode<RobotState> {
 	 * @throws IllegalArgumentException robot is null or thrown by superclass, {@link ValueNode}.
 	 * @throws IllegalStateException thrown by superclass, {@link ValueNode}.
 	 */
-	public RobotStateValueNode(Network network, RobotBase robot) throws IllegalArgumentException, IllegalStateException {
-		super(network);
+	public RobotStateValueNode(Network network, Logger logger, RobotBase robot) throws IllegalArgumentException, IllegalStateException {
+		super(network, logger);
 		
 		if(robot == null) {
 			throw new IllegalArgumentException("Null Robot");

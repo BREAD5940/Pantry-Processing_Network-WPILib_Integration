@@ -1,5 +1,6 @@
 package org.team5940.pantry.processing_network.wpilib.input.controller;
 
+import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
 import org.team5940.pantry.processing_network.ValueNode;
@@ -37,9 +38,9 @@ public class HIDAxisValueNode extends ValueNode<Double> {
 	 * @throws IllegalArgumentException
 	 *             If the inputDevice is null.
 	 */
-	public HIDAxisValueNode(Network network, GenericHID inputDevice, int axis)
+	public HIDAxisValueNode(Network network, Logger logger, GenericHID inputDevice, int axis)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network);
+		super(network, logger);
 		ProcessingNetworkUtils.checkArgument(inputDevice);
 		this.inputDevice = inputDevice;
 		this.axis = axis;

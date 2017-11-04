@@ -1,5 +1,6 @@
 package org.team5940.pantry.processing_network.wpilib.systems;
 
+import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 
 import edu.wpi.first.wpilibj.RobotBase;
@@ -11,7 +12,7 @@ public abstract class NetworkRobot extends RobotBase {
 	@Override
 	public void startCompetition() {
 
-		Network network = new Network(this.getMainNetworkUpdateRate());
+		Network network = new Network(this.getMainNetworkUpdateRate(), this.getMainNetworkLogger());
 
 		try {
 			this.setupNetwork(network);
@@ -33,6 +34,13 @@ public abstract class NetworkRobot extends RobotBase {
 	protected int getMainNetworkUpdateRate() {
 		return 10000;
 	}
+	
+	/**
+	 * Gets the logger for the main Network. Must be overridden.
+	 * 
+	 * @return The logger for the main Network.
+	 */
+	protected abstract Logger getMainNetworkLogger();
 
 	/**
 	 * Adds all of the Nodes to the Network. Can create and start other Networks
