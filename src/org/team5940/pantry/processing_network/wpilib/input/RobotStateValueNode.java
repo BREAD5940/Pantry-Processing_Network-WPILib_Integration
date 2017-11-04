@@ -42,7 +42,7 @@ public class RobotStateValueNode extends ValueNode<RobotState> {
 		super(network, logger);
 		
 		if(robot == null) {
-			throw new IllegalArgumentException("Null Robot");
+			this.logger.throwError(this, new IllegalArgumentException("Null Robot"));
 		}
 		
 		this.robot = robot;
