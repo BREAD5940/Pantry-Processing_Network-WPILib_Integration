@@ -15,7 +15,7 @@ plugins {
     id "jaci.openrio.gradle.GradleRIO" version "2018.01.07"
 }
 
-group = 'org.team5940.pantry'
+group = 'org.team5940.pantry.processing_network'
 version = '0.0.0'
 
 // In this section you declare where to find the dependencies of your project
@@ -29,8 +29,8 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
     compile wpilib()
-    compile "org.team5940.pantry:Pantry-Logging:0.0.0"
-    compile "org.team5940.pantry:Pantry-Processing_Network:0.0.0"
+    compile "org.team5940.pantry:Logging:0.0.0"
+    compile "org.team5940.pantry:Processing_Network:0.0.0"
 }
 
 task wrapper(type: Wrapper) {

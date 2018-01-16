@@ -17,4 +17,4 @@ include 'services:webservice'
 */
 
 
-rootProject.name = 'Pantry-Processing_Network-WPILib_Integration'
+rootProject.name = 'WPILib_Integration'
