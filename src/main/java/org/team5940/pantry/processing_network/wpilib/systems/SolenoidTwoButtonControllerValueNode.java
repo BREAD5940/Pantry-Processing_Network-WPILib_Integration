@@ -1,4 +1,4 @@
-package org.team5940.pantry.processing_network.wpilib.output.pneumatics;
+package org.team5940.pantry.processing_network.wpilib.systems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;

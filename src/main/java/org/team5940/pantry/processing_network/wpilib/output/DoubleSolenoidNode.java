@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.team5940.pantry.processing_network.wpilib.output.pneumatics;
+package org.team5940.pantry.processing_network.wpilib.output;
 
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;

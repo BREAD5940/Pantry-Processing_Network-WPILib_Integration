@@ -1,4 +1,4 @@
-package org.team5940.pantry.processing_network.wpilib.input.controller;
+package org.team5940.pantry.processing_network.wpilib.input;
 
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
