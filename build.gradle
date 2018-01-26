@@ -36,3 +36,13 @@ dependencies {
 task wrapper(type: Wrapper) {
    gradleVersion = '4.4'
 }
+
+task docs(type: Exec) {
+  workingDir './src/main/java'
+
+  executable 'javadoc'
+
+  args '-d', '../../../docs', '-subpackages', 'org.team5940.pantry.processing_network.wpilib'
+
+  ignoreExitValue true
+}
