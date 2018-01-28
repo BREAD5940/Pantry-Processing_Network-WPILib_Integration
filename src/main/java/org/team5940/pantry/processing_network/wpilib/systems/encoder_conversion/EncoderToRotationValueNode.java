@@ -23,14 +23,16 @@ public class EncoderToRotationValueNode extends DivisionValueNode {
 	 *            This' Network
 	 * @param logger
 	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param encoderPulsesValueNode
 	 *            The encoder ValueNode. Can be velocity or position.
 	 * @param pulsesPerRotation
 	 *            The encoder pulses to rotation conversion constant.
 	 */
-	public EncoderToRotationValueNode(Network network, Logger logger,
+	public EncoderToRotationValueNode(Network network, Logger logger, String label,
 			ValueNode<? extends Number> encoderPulsesValueNode, double pulsesPerRotation) {
-		super(network, logger, encoderPulsesValueNode, pulsesPerRotation);
+		super(network, logger, label, encoderPulsesValueNode, pulsesPerRotation);
 	}
 
 }
