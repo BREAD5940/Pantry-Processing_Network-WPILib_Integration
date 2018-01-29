@@ -25,24 +25,26 @@ public class SmartDashboardNode extends Node {
 	ValueNode<? extends Number> valueNode;
 
 	/**
-	 * Puts the value of a number ValueNode onto the SmartDashboard with
-	 * specified key.
+	 * Puts the value of a number ValueNode onto the SmartDashboard with specified
+	 * key.
 	 * 
 	 * @param network
 	 *            This' Network.
 	 * @param logger
-	 *            This' Logger.
+	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param requireUpdate
 	 *            If the Node should be updated.
 	 * @param key
-	 *            The key to put with the number. It is the text that shows up
-	 *            right by the value on the SmartDashboard.
+	 *            The key to put with the number. It is the text that shows up right
+	 *            by the value on the SmartDashboard.
 	 * @param valueNode
 	 *            The ValueNode to determine what value should be logged.
 	 */
-	public SmartDashboardNode(Network network, Logger logger, boolean requireUpdate, String key,
+	public SmartDashboardNode(Network network, Logger logger, String label, boolean requireUpdate, String key,
 			ValueNode<? extends Number> valueNode) throws IllegalArgumentException, IllegalStateException {
-		super(network, logger, requireUpdate);
+		super(network, logger, label, requireUpdate);
 
 		this.key = key;
 

@@ -6,18 +6,21 @@ import org.team5940.pantry.processing_network.NodeGroup;
 import org.team5940.pantry.processing_network.ValueNode;
 
 public class MeasurementToEncoderValueNode extends NodeGroup {
-	
+
 	RotationToEncoderValueNode encoderPulsesValueNode;
 
-	public MeasurementToEncoderValueNode(Network network, Logger logger, ValueNode<? extends Number> measurementValueNode, double diameter, double pulsesPerRotation) {
-		super(network, logger);
-		
-		MeasurementToRotationValueNode rotationValueNode = new MeasurementToRotationValueNode(network, logger, measurementValueNode, diameter);
-		
-		this.encoderPulsesValueNode = new RotationToEncoderValueNode(network, logger, rotationValueNode, pulsesPerRotation);
+	// TODO add comments.
+	public MeasurementToEncoderValueNode(Network network, Logger logger, String label,
+			ValueNode<? extends Number> measurementValueNode, double diameter, double pulsesPerRotation) {
+		super(network, logger, label);
+
+		MeasurementToRotationValueNode rotationValueNode = new MeasurementToRotationValueNode(network, logger,
+				"Measurement To Rotation Value Node: " + label, measurementValueNode, diameter);
+
+		this.encoderPulsesValueNode = new RotationToEncoderValueNode(network, logger,
+				"Rotation to Encoder Value Node: " + label, rotationValueNode, pulsesPerRotation);
 	}
-	
-	
+
 	public RotationToEncoderValueNode getEncoderPulsesValueNode() {
 		return encoderPulsesValueNode;
 	}

@@ -1,8 +1,8 @@
-package org.team5940.pantry.processing_network.wpilib.input.controller;
+package org.team5940.pantry.processing_network.wpilib.input;
 
+import org.team5940.pantry.logging.LoggingUtils;
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
-import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
 import org.team5940.pantry.processing_network.ValueNode;
 
 import edu.wpi.first.wpilibj.GenericHID;
@@ -19,8 +19,8 @@ public class HIDAxisValueNode extends ValueNode<Double> {
 	final GenericHID inputDevice;
 
 	/**
-	 * The port that the axis is from. This corresponds to the getRawAxis(axis)
-	 * for the GenericHID.
+	 * The port that the axis is from. This corresponds to the getRawAxis(axis) for
+	 * the GenericHID.
 	 */
 	final int axis;
 
@@ -31,6 +31,10 @@ public class HIDAxisValueNode extends ValueNode<Double> {
 	 * 
 	 * @param network
 	 *            The Network.
+	 * @param logger
+	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param inputDevice
 	 *            The device that the axis is from.
 	 * @param axis
@@ -38,10 +42,10 @@ public class HIDAxisValueNode extends ValueNode<Double> {
 	 * @throws IllegalArgumentException
 	 *             If the inputDevice is null.
 	 */
-	public HIDAxisValueNode(Network network, Logger logger, GenericHID inputDevice, int axis)
+	public HIDAxisValueNode(Network network, Logger logger, String label, GenericHID inputDevice, int axis)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network, logger);
-		ProcessingNetworkUtils.checkArgument(inputDevice);
+		super(network, logger, label);
+		LoggingUtils.checkArgument(inputDevice);
 		this.inputDevice = inputDevice;
 		this.axis = axis;
 	}

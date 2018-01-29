@@ -31,6 +31,8 @@ public class EncoderToMeasurementNodeGroup extends NodeGroup {
 	 *            This' Network.
 	 * @param logger
 	 *            This' logger.
+	 * @param label
+	 *            This' Label.
 	 * @param encoderPulsesValueNode
 	 *            The ValueNode for an encoder position, velocity, acceleration, or
 	 *            jerk.
@@ -43,13 +45,14 @@ public class EncoderToMeasurementNodeGroup extends NodeGroup {
 	 *            The conversion of pulses of the encoder to the rotation of the
 	 *            wheel. Should be greater than one.
 	 */
-	public EncoderToMeasurementNodeGroup(Network network, Logger logger,
+	public EncoderToMeasurementNodeGroup(Network network, Logger logger, String label,
 			ValueNode<? extends Number> encoderPulsesValueNode, double pulsesPerRotation, double diameter) {
-		super(network, logger);
+		super(network, logger, label);
 
 		EncoderToRotationValueNode rotationValueNode = new EncoderToRotationValueNode(network, logger,
-				encoderPulsesValueNode, pulsesPerRotation);
-		this.measurmentValueNode = new RotationToMeasurementValueNode(network, logger, rotationValueNode, diameter);
+				"Encoder to Rotation Value Node: " + label, encoderPulsesValueNode, pulsesPerRotation);
+		this.measurmentValueNode = new RotationToMeasurementValueNode(network, logger,
+				"Rotation to Measurement Value Node: " + label, rotationValueNode, diameter);
 	}
 
 	/**

@@ -34,16 +34,18 @@ public class MeasurementToRotationValueNode extends ValueNode<Double> {
 	 *            This' Network
 	 * @param logger
 	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param measurementValueNode
 	 *            The distance or velocity the cylindrical object has or is
 	 *            traveling.
 	 * @param diameter
 	 *            The diameter of the rotating cylindrical object.
 	 */
-	public MeasurementToRotationValueNode(Network network, Logger logger,
+	public MeasurementToRotationValueNode(Network network, Logger logger, String label,
 			ValueNode<? extends Number> measurementValueNode, double diameter)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network, logger, measurementValueNode);
+		super(network, logger, label, measurementValueNode);
 
 		this.measurementValueNode = measurementValueNode;
 		this.diameter = diameter;

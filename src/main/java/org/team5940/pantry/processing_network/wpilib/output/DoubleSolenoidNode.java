@@ -1,12 +1,9 @@
-/**
- * 
- */
-package org.team5940.pantry.processing_network.wpilib.output.pneumatics;
+package org.team5940.pantry.processing_network.wpilib.output;
 
+import org.team5940.pantry.logging.LoggingUtils;
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.Node;
-import org.team5940.pantry.processing_network.ProcessingNetworkUtils;
 import org.team5940.pantry.processing_network.ValueNode;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -29,6 +26,10 @@ public class DoubleSolenoidNode extends Node {
 	 * 
 	 * @param network
 	 *            The Network.
+	 * @param logger
+	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param requireUpdate
 	 *            If it requires and update every cycle.
 	 * @param solenoidValueNode
@@ -40,12 +41,12 @@ public class DoubleSolenoidNode extends Node {
 	 * @throws IllegalStateException
 	 *             If network is started.
 	 */
-	public DoubleSolenoidNode(Network network, Logger logger, boolean requireUpdate,
+	public DoubleSolenoidNode(Network network, Logger logger, String label, boolean requireUpdate,
 			ValueNode<? extends DoubleSolenoid.Value> solenoidValueNode, DoubleSolenoid... doubleSolenoids)
 			throws IllegalArgumentException, IllegalStateException {
-		super(network, logger, requireUpdate, solenoidValueNode);
+		super(network, logger, label, requireUpdate, solenoidValueNode);
 
-		ProcessingNetworkUtils.checkArrayArguments(doubleSolenoids);
+		LoggingUtils.checkArrayArguments(doubleSolenoids);
 
 		this.solenoidValueNode = solenoidValueNode;
 		this.doubleSolenoids = doubleSolenoids;

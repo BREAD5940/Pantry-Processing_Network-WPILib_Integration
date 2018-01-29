@@ -24,14 +24,16 @@ public class RotationToEncoderValueNode extends MultiplicationValueNode {
 	 *            This' Network
 	 * @param logger
 	 *            This' Logger
+	 * @param label
+	 *            This' label
 	 * @param rotationsValueNode
 	 *            The rotations of an object. Can be velocity or position.
 	 * @param pulsesPerRotation
 	 *            The encoder pulses to rotation conversion constant.
 	 */
-	public RotationToEncoderValueNode(Network network, Logger logger, ValueNode<? extends Number> rotationsValueNode,
-			double pulsesPerRotation) {
-		super(network, logger, rotationsValueNode, pulsesPerRotation);
+	public RotationToEncoderValueNode(Network network, Logger logger, String label,
+			ValueNode<? extends Number> rotationsValueNode, double pulsesPerRotation) {
+		super(network, logger, label, rotationsValueNode, pulsesPerRotation);
 	}
 
 }

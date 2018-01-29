@@ -1,4 +1,4 @@
-package org.team5940.pantry.processing_network.wpilib.input.controller.controller_layouts;
+package org.team5940.pantry.processing_network.wpilib.systems.controller_layouts;
 
 /**
  * This is an example for what a controller interface would look like. This
