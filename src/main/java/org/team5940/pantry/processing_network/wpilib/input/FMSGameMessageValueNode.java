@@ -7,12 +7,12 @@ import org.team5940.pantry.processing_network.ValueNode;
 
 import com.google.gson.JsonArray;
 
-public class FMSGameMessageNode extends ValueNode {
+public class FMSGameMessageValueNode extends ValueNode {
 
     DriverStation dsInstance;
 
     /**
-     * Initializes a new {@link FMSGameMessageNode}
+     * Initializes a new {@link FMSGameMessageValueNode}
      *
      * @param network
      *            This' Network
@@ -21,7 +21,7 @@ public class FMSGameMessageNode extends ValueNode {
      * @param label
      *            The label that describes this Node.
      */
-    public FMSGameMessageNode(Network network, Logger logger, JsonArray label)
+    public FMSGameMessageValueNode(Network network, Logger logger, JsonArray label)
             throws IllegalArgumentException, IllegalStateException {
         super(network, logger, label);
         this.dsInstance = DriverStation.getInstance();
