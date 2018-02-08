@@ -16,7 +16,7 @@ import org.team5940.pantry.processing_network.ValueNode;
  * @author Michael Bentley
  *
  */
-public class SolenoidTwoBooleanControllerValueNode extends ValueNode<DoubleSolenoid.Value> {
+public class SolenoidTwoBooleanControllerValueNode extends ValueNode<Value> {
 
 	/**
 	 * The ValueNode that sets the value of the solenoids to kReverse when
