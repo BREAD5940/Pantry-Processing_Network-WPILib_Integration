@@ -8,7 +8,7 @@ import org.team5940.pantry.processing_network.ValueNode;
 import org.team5940.pantry.processing_network.functional.DeadzoneValueNode;
 import org.team5940.pantry.processing_network.functional.MultiplicationValueNode;
 import org.team5940.pantry.processing_network.wpilib.input.HIDAxisValueNode;
-import org.team5940.pantry.processing_network.wpilib.systems.encoder_conversion.MeasurementToEncoderValueNode;
+import org.team5940.pantry.processing_network.wpilib.systems.encoder_conversion.MeasurementToEncoderNodeGroup;
 import org.team5940.pantry.processing_network.wpilib.systems.encoder_conversion.RotationToEncoderValueNode;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -29,12 +29,12 @@ public class VelocityControlNodeGroup extends NodeGroup {
 	/**
 	 * The set Pulses Per Rotation of the left talons.
 	 */
-	MeasurementToEncoderValueNode leftEncoderValue;
+	MeasurementToEncoderNodeGroup leftEncoderValue;
 
 	/**
 	 * The set Pulses Per Rotation of the right talons.
 	 */
-	MeasurementToEncoderValueNode rightEncoderValue;
+	MeasurementToEncoderNodeGroup rightEncoderValue;
 
 	/**
 	 * Can easily return the set Encoder speed of a talon based on either arcade or
@@ -89,9 +89,9 @@ public class VelocityControlNodeGroup extends NodeGroup {
 		MultiplicationValueNode leftSpeed = new MultiplicationValueNode(network, logger,
 				label + ": Left Set Speed (ft/s)", arcadeDrive.getLeftMotorValueNode(), maxSpeed);
 
-		this.leftEncoderValue = new MeasurementToEncoderValueNode(network, logger,
+		this.leftEncoderValue = new MeasurementToEncoderNodeGroup(network, logger,
 				label + ": Left Measuremnt To Encoder Node Group", leftSpeed, wheelDiameter, velocityPulsesPerRotation);
-		this.rightEncoderValue = new MeasurementToEncoderValueNode(network, logger,
+		this.rightEncoderValue = new MeasurementToEncoderNodeGroup(network, logger,
 				label + ": Right Measuremnt To Encoder Node Group", rightSpeed, wheelDiameter,
 				velocityPulsesPerRotation);
 	}
