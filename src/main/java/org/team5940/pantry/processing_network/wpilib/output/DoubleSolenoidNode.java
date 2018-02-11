@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  * at the same time.
  * 
  * @author Michael Bentley
- */ // TODO rename this to DoubleSolenode.
+ */
 public class DoubleSolenoidNode extends Node {
 
 	ValueNode<? extends DoubleSolenoid.Value> solenoidValueNode;
