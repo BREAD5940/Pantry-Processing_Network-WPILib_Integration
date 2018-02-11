@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.RobotBase;
  * @author David Boles
  *
  */
-public class RobotStateValueNode extends ValueNode<Enum<? extends RobotState>> {
+public class RobotStateValueNode extends ValueNode<RobotState> {
 
 	/**
 	 * An enum representing the possible states of the robot: disabled, autonomous,
@@ -52,7 +52,7 @@ public class RobotStateValueNode extends ValueNode<Enum<? extends RobotState>> {
 	public RobotStateValueNode(Network network, Logger logger, String label, RobotBase robot)
 			throws IllegalArgumentException, IllegalStateException {
 		super(network, logger, label);
-		
+
 		if (robot == null) {
 			this.logger.throwError(this, new IllegalArgumentException("Null Robot"));
 		}
