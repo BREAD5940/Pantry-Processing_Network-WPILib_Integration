@@ -80,13 +80,16 @@ public class ArcadeDriveValueNode extends ValueNode<Double> {
 		leftMotorSpeed += yaw;
 		rightMotorSpeed -= yaw;
 
-		if (rightMotorSpeed > 1 || leftMotorSpeed > 1) {
-			if (rightMotorSpeed > leftMotorSpeed) {
-				rightMotorSpeed = rightMotorSpeed / Math.abs(rightMotorSpeed);
-				leftMotorSpeed = leftMotorSpeed / Math.abs(rightMotorSpeed);
+		double absRightMotorSpeed = Math.abs(rightMotorSpeed);
+		double absLeftMotorSpeed = Math.abs(leftMotorSpeed);
+
+		if (absRightMotorSpeed > 1 || absLeftMotorSpeed > 1) {
+			if (absRightMotorSpeed > absLeftMotorSpeed) {
+				rightMotorSpeed = rightMotorSpeed / absRightMotorSpeed;
+				leftMotorSpeed = leftMotorSpeed / absRightMotorSpeed;
 			} else {
-				leftMotorSpeed = leftMotorSpeed / Math.abs(leftMotorSpeed);
-				rightMotorSpeed = rightMotorSpeed / Math.abs(leftMotorSpeed);
+				leftMotorSpeed = leftMotorSpeed / absLeftMotorSpeed;
+				rightMotorSpeed = rightMotorSpeed / absLeftMotorSpeed;
 			}
 		}
 
