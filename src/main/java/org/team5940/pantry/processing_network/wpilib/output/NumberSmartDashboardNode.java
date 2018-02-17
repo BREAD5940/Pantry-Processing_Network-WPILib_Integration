@@ -1,5 +1,6 @@
 package org.team5940.pantry.processing_network.wpilib.output;
 
+import org.team5940.pantry.logging.LoggingUtils;
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.Node;
@@ -46,6 +47,9 @@ public class NumberSmartDashboardNode extends Node {
 			ValueNode<? extends Number> valueNode) throws IllegalArgumentException, IllegalStateException {
 		super(network, logger, label, requireUpdate);
 
+		LoggingUtils.checkArgument(key);
+		
+		
 		this.key = key;
 
 		this.valueNode = valueNode;
