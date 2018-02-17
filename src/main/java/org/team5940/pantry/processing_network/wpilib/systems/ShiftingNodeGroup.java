@@ -47,10 +47,10 @@ public class ShiftingNodeGroup extends NodeGroup {
 	 *            The starting position of the DoubleSolenoid.
 	 */
 	public ShiftingNodeGroup(Network network, Logger logger, String label, Joystick joystick, int shiftReverseButton,
-			int shiftForwardButton, DoubleSolenoid solenoid, Value startingPosition) {
+			int shiftForwardButton, Value startingPosition) {
 		super(network, logger, label);
 
-		LoggingUtils.checkArrayArguments(joystick, solenoid, startingPosition);
+		LoggingUtils.checkArrayArguments(joystick, startingPosition);
 
 		HIDButtonValueNode shiftDown = new HIDButtonValueNode(network, logger, label + ": Shift Down Button", joystick,
 				shiftForwardButton);
@@ -63,8 +63,6 @@ public class ShiftingNodeGroup extends NodeGroup {
 		this.addNode(shiftUp);
 		this.addNode(shiftDown);
 		this.addNode(this.solenoidController);
-		this.addNode(new DoubleSolenoidNode(network, logger, label + ": Shifting Solinode", true, solenoidController,
-				solenoid));
 	}
 
 	/**
