@@ -66,15 +66,17 @@ public class VelocityControlNodeGroup extends NodeGroup {
 	 *            The velocity encoder pulses to rotation value.
 	 */
 	public VelocityControlNodeGroup(Network network, Logger logger, String label, Joystick joystick, int yawAxisIndex,
-			int forwardAxisIndex, double yawDeadzone, double forwardDeadzone, ValueNode<? extends Number> maxSpeed,
-			double wheelDiameter, double velocityPulsesPerRotation) {
+			int forwardAxisIndex, boolean yawAxisInverted, boolean forwardAxisInverted, double yawDeadzone,
+			double forwardDeadzone, ValueNode<? extends Number> maxSpeed, double wheelDiameter,
+			double velocityPulsesPerRotation) {
 		super(network, logger, label);
 
 		LoggingUtils.checkArrayArguments(joystick, maxSpeed);
 
-		HIDAxisValueNode yawAxis = new HIDAxisValueNode(network, logger, label + ": Yaw Axis", joystick, yawAxisIndex);
+		HIDAxisValueNode yawAxis = new HIDAxisValueNode(network, logger, label + ": Yaw Axis", joystick, yawAxisIndex,
+				yawAxisInverted);
 		HIDAxisValueNode forwardAxis = new HIDAxisValueNode(network, logger, label + ": Yaw Axis", joystick,
-				forwardAxisIndex);
+				forwardAxisIndex, forwardAxisInverted);
 
 		DeadzoneValueNode yawAxisDeadzone = new DeadzoneValueNode(network, logger, label + ": Yaw Deadzone", yawAxis,
 				yawDeadzone);
