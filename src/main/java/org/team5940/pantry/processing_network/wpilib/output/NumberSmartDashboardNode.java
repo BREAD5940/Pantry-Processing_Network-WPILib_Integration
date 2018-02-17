@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author Michael Bentley
  *
  */
-public class SmartDashboardNode extends Node {
+public class NumberSmartDashboardNode extends Node {
 
 	/**
 	 * The key to put next to the value on the SmartDashboard.
@@ -42,7 +42,7 @@ public class SmartDashboardNode extends Node {
 	 * @param valueNode
 	 *            The ValueNode to determine what value should be logged.
 	 */
-	public SmartDashboardNode(Network network, Logger logger, String label, boolean requireUpdate, String key,
+	public NumberSmartDashboardNode(Network network, Logger logger, String label, boolean requireUpdate, String key,
 			ValueNode<? extends Number> valueNode) throws IllegalArgumentException, IllegalStateException {
 		super(network, logger, label, requireUpdate);
 
