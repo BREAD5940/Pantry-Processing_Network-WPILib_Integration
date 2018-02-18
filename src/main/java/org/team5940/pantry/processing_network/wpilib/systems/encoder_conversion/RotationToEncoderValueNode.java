@@ -3,7 +3,7 @@ package org.team5940.pantry.processing_network.wpilib.systems.encoder_conversion
 import org.team5940.pantry.logging.loggers.Logger;
 import org.team5940.pantry.processing_network.Network;
 import org.team5940.pantry.processing_network.ValueNode;
-import org.team5940.pantry.processing_network.functional.MultiplicationValueNode;
+import org.team5940.pantry.processing_network.functional.basic_arithmetic.MultiplicationValueNode;
 
 /**
  * Converts the rotation of an object to the corresponding encoder value. Should
